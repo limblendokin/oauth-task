@@ -17,7 +17,7 @@ passport.use(
     new VKontakteStrategy({
         clientID: keys.vk.appId,
         clientSecret: keys.vk.secret,
-        callbackURL: 'http://92.100.160.248:5500/oauth/vk/callback'
+        callbackURL: 'http://35.228.127.106:5500/oauth/vk/callback'
     }, (accessToken, refreshToken, params, profile, done) => {
         console.log(params);
         User.findOne({vkId:profile.id})

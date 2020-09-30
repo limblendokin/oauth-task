@@ -14,7 +14,7 @@ router.get('/logout', (req, res) => {
 
 router.get('/vk/callback', passport.authenticate('vkontakte'), (req, res) => {
     console.log(res);
-    res.redirect('http://localhost:4200');
+    res.redirect('http://35.228.127.106:4200');
 })
 
 
