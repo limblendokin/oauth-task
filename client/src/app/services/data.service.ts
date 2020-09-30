@@ -12,11 +12,11 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   public getFriends(){
-    return this.http.get<any>('http://localhost:5500')
+    return this.http.get<any>('http://35.228.127.106:5500')
   }
 
   public getAuth(){
-    return this.http.get<any>('http://localhost:5500/oauth/vk/');
+    return this.http.get<any>('http://35.228.127.106:5500/oauth/vk/');
   }
 
 }
