@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-console.log(process.env.test);
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -37,7 +37,7 @@ app.use('/oauth', authRoutes);
 app.use('/', friendsRoute);
 
 // Start server
-var port = 5500 || process.env.PORT;
+var port = process.env.PORT || 5500;
 app.listen(port, () => {
     console.log(`Server started on ${port}`);
 })
