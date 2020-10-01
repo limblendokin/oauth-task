@@ -5,9 +5,6 @@ const UserSchema = new Schema({
     vkId:{
         type: String
     },
-    name: {
-        type: String
-    },
     accessToken:{
         type:String
     }

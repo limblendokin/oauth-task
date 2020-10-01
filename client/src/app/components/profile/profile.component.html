@@ -1,4 +1,5 @@
-<div class="card p-3 w-20">
-    <img class="card-img-top profile-img" src="{{ friend.photo_200 }}">
-    <a class="card-body" href="{{'https://vk.com/' + friend.domain}}">{{friend.first_name + " " + friend.last_name}}</a>
+<img class="img-fluid rounded-image" src="{{ friend.photo_200 }}">
+<div class="m-3">
+    <h2>{{friend.first_name + " " + friend.last_name}}</h2>
+    <a class="btn btn-info" href="{{'https://vk.com/' + friend.domain}}">View</a>
 </div>

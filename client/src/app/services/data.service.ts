@@ -8,15 +8,14 @@ import { throwError } from 'rxjs';
 })
 
 export class DataService {
-
+  backendUrl = "http://127.0.0.1:4200/"
   constructor(private http:HttpClient) { }
 
   public getFriends(){
-    return this.http.get<any>('http://35.228.127.106:5500')
+    return this.http.get<any>(this.backendUrl + "api/friends", {withCredentials:true})
   }
-
-  public getAuth(){
-    return this.http.get<any>('http://35.228.127.106:5500/oauth/vk/');
+  public getProfile(){
+    return this.http.get<any>(this.backendUrl + "api/profile",{withCredentials:true})
   }
 
 }

@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const { route } = require('./friends');
-const vkauth = require('../vkauth');
-const front = "http://localhost:4200/";
+const vkauth = require('../vkApi');
+const db = require('../db');
+const vkApi = require('../vkApi');
+const front = "http://127.0.0.1:4200/";
+
 
 router.get('/logout', (req, res) => {
     req.session = null;
@@ -14,16 +16,17 @@ router.get('/vk/callback', async (req, res) => {
         console.log("sending code to vk");
         try{
             let data = await vkauth.recieveCode(req.query.code);
-            console.log(data);
+            await db.add(data.user_id, data.access_token)
             req.session.user_id = data.user_id;
             res.redirect(302, front);
         }
         catch(err){
-            res.json({success:false})
+            console.log(err);
+            res.json({success:false, msg: "Not authorised"});
         }
     }
     else{
-        console.log(req.query);
+        res.json({success:false, msg:"No code provided"});
     }
 })
 

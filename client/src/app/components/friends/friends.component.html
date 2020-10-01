@@ -1,3 +1,11 @@
 <div class="row" >
-    <app-profile class="col" *ngFor="let friend of friends" [friend]="friend"></app-profile>
+    <ng-container *ngIf="isAuthenticated">
+        <app-profile class="col-md-4 p-3 mr-auto ml-auto profile text-center" *ngFor="let friend of friends" [friend]="friend"></app-profile>
+    </ng-container>
+    <ng-container *ngIf="!isAuthenticated">
+        <div class="col p-5">
+            <h2 class="mb-5">Log in to view friends</h2>
+            <a class="btn btn-primary" href="https://oauth.vk.com/authorize?client_id=7612646&scope=2&redirect_uri=http://127.0.0.1:4200/api/oauth/vk/callback&response_type=code&v=5.21" >Login</a>
+        </div>
+    </ng-container>
 </div>
