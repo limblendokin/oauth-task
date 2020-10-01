@@ -36,7 +36,7 @@ app.use('/oauth', authRoutes);
 app.use('/', friendsRoute);
 
 // Start server
-var port = 5500 || process.env.PORT;
+var port = 4200 || process.env.PORT;
 app.listen(port, () => {
     console.log(`Server started on ${port}`);
 })
