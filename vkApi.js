@@ -1,4 +1,3 @@
-const { reject } = require('async');
 const axios = require('axios');
 const keys = require('./config/keys');
 
