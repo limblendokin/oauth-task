@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+console.log(process.env.test);
 app.use(bodyParser.json());
 app.use(cors());
 
