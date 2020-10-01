@@ -18,7 +18,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "ng build",
+    "build": "npm run npmbuild --prefix client",
+    "npmbuild": "ng build",
     "postinstall": "npm run npmpostinstall --prefix client",
     "npmpostinstall": "ng build --output-path dist"
   },
