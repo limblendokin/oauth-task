@@ -14,12 +14,16 @@ app.use(cookieSession({
     keys: [keys.session.cookieKey]
 }))
 
-// Connection to local db 
-const dbURI = 'mongodb://localhost:27017/oauth-task';
+// // Connection to local db 
+// const dbURI = 'mongodb://localhost:27017/oauth-task';
+// Connection to external db
+const dbURI = keys.db.uri;
 const dbConfig = {
     autoIndex: false,
     useNewUrlParser: true
 }
+
+
 mongoose
     .set('useUnifiedTopology', true)
     .connect(dbURI, dbConfig)
