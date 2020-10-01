@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const vkauth = require('../vkApi');
 const db = require('../db');
-const vkApi = require('../vkApi');
 const front = "http://127.0.0.1:4200/";
 
 

@@ -33,6 +33,12 @@ router.get('/friends', authCheck, async (req, res) => {
 router.get('/profile', authCheck, async (req, res) => {
     let user = await db.getOne(req.session.user_id);
     console.log(user);
+    if(!user){
+        res.json({
+            success: false,
+            reason: "Not found"
+        })
+    }
     getProfile(user.vkId, user.accessToken)
         .then(profile=>{
             res.json({

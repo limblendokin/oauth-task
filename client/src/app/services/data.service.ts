@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 })
 
 export class DataService {
-  backendUrl = "http://127.0.0.1:4200/"
+  backendUrl = "/"
   constructor(private http:HttpClient) { }
 
   public getFriends(){
