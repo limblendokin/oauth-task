@@ -2,11 +2,11 @@ const express = require('express');
 const authRoutes = require('./routes/login'); 
 const friendsRoute = require('./routes/friends');
 const app = express();
-const passportConfig = require('./config/passport-config');
+//const passportConfig = require('./config/passport-config');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
-const passport = require('passport');
+//const passport = require('passport');
 const cors = require('cors');
 
 app.use(cors());
@@ -16,8 +16,8 @@ app.use(cookieSession({
     keys: [keys.session.cookieKey]
 }))
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Connection to local db 
 const dbURI = 'mongodb://localhost:27017/oauth-task';
